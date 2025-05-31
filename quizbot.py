@@ -4,7 +4,7 @@ import fitz
 import re
 import asyncio
 
-TOKEN = ""
+TOKEN = "7430366989:AAEbiiONBBBXG16e1nfLnU--bNVRjiBN6ww"
 
 def extract_quiz_questions(text):
     blocks = re.split(r"\n\s*\d+\.", text)
