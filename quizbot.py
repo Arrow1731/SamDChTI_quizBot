@@ -1,18 +1,10 @@
-
-
-
-
-
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, ContextTypes, filters
-import fitz  # PyMuPDF
+import fitz 
 import re
 import asyncio
-import os
-from dotenv import load_dotenv
 
-load_dotenv()
-TOKEN = os.getenv("BOT_TOKEN")  # Load from .env file
+TOKEN = ""
 
 def extract_quiz_questions(text):
     blocks = re.split(r"\n\s*\d+\.", text)
@@ -26,7 +18,7 @@ def extract_quiz_questions(text):
                 questions.append({
                     "question": question,
                     "options": options,
-                    "correct_option_id": 0  # Default to 0; you can improve this logic
+                    "correct_option_id": 0 
                 })
     return questions
 
@@ -66,7 +58,7 @@ async def handle_file(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 is_anonymous=False,
                 open_period=10 
             )
-            await asyncio.sleep(11)
+            await asyncio.sleep(11) 
         except Exception as e:
             await update.message.reply_text(f"⚠️ Error sending quiz: {str(e)}")
 
@@ -78,3 +70,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
