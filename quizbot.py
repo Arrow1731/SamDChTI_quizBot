@@ -23,7 +23,7 @@ def extract_quiz_questions(text):
     return questions
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("📥 Send a PDF file with quiz questions (format: A is the correct answer fopr test 1).")
+    await update.message.reply_text("📥 Send a PDF file with quiz questions (format: A is the correct answer for test 1).")
 
 async def handle_file(update: Update, context: ContextTypes.DEFAULT_TYPE):
     file = update.message.document
